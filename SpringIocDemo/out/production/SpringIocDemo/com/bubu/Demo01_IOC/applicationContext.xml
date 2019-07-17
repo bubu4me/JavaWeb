@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--将Student对象交给SpringIoC容器创建管理，
+        其中id是唯一的标识（对象名），
+        class值为全类名（全类名=全包名+类名），用于指定要创建bean的类-->
+    <bean id="studentId" class="com.bubu.Demo01_IOC.Student">
+        <!--使用setter注入方式为属性赋值，使用该方式前提：
+            类中有无参构造函数和setxx()方法
+            name属性的值 与 类中属性的 属性名 一致(必须要一致)
+            value属性的值即你要给类中属性赋的值
+        -->
+        <property name="name" value="bubu"/>
+        <property name="age" value="22"/>
+    </bean>
+
+    <bean id = "userServiceId" class="com.bubu.Demo01_IOC.UserServiceImpl"></bean>
+
+
+</beans>
